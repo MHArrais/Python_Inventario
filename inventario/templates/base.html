@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Lista Marcas{% endblock %}</title>
+    <style>
+        /* Estilos para header e footer */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .container {
+            padding: 20px;
+            margin-bottom: 50px; /* Para evitar sobreposição com o footer */
+        }
+
+        .button-container a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #0056b3;
+        }
+
+        .logout-btn {
+            background-color: #dc3545;
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Lista Marcas
+    </header>
+
+    <div class="container">
+        {% block content %}
+        <div class="button-container">
+            <a href="{% url 'cadastrar_item' %}">Cadastrar Novo Produto</a>
+            <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+        </div>
+        {% endblock %}
+    </div>
+
+    <footer>
+        Lista Marcas - Todos os direitos reservados &copy; 2024
+    </footer>
+
+</body>
+</html>
